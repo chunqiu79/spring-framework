@@ -16,11 +16,6 @@
 
 package org.springframework.context.support;
 
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Supplier;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanDefinitionStoreException;
@@ -40,6 +35,11 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.core.metrics.ApplicationStartup;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
+
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Supplier;
 
 /**
  * Generic ApplicationContext implementation that holds a single internal
@@ -96,6 +96,8 @@ import org.springframework.util.Assert;
  */
 public class GenericApplicationContext extends AbstractApplicationContext implements BeanDefinitionRegistry {
 
+	// 这个就是 ApplicationContext 中真正的 beanFactory
+	// 用来存储 bean 定义信息、 bean 依赖、 bean 创建、 bean 相关缓存等管理 bean 的功能
 	private final DefaultListableBeanFactory beanFactory;
 
 	@Nullable

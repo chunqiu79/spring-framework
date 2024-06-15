@@ -30,6 +30,11 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
  * @since 3.0.1
  * @see org.springframework.context.annotation.ConfigurationClassPostProcessor
  */
+
+/**
+ * 继承了BeanFactoryPostProcessor，多了个postProcessBeanDefinitionRegistry方法
+ * 这个方法可以添加beanDefinition
+ */
 public interface BeanDefinitionRegistryPostProcessor extends BeanFactoryPostProcessor {
 
 	/**
